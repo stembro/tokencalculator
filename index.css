@@ -1,0 +1,80 @@
+#investmentamount, #icos, #currencies, #rounds  {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-family: Raleway,sans-serif;
+}
+
+#tokensresult{
+  width: 100%;
+  margin: 0px 0;
+  padding: 12px 20px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-family: Raleway,sans-serif;
+  font-weight: bold;
+  color: purple;
+  background-color: black;
+  text-align: center;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+#tokensresult::-webkit-input-placeholder { /* Chrome */
+  color: #BA55D3;
+}
+#tokensresult:-ms-input-placeholder { /* IE 10+ */
+  color: #BA55D3;
+}
+#tokensresult::-moz-placeholder { /* Firefox 19+ */
+  color: #BA55D3;
+  opacity: 1;
+}
+#tokensresult:-moz-placeholder { /* Firefox 4 - 18 */
+  color: #BA55D3;
+  opacity: 1;
+}
+
+#startTokenCalc {
+    width: 100%;
+    background-color: #BA55D3;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: Raleway,sans-serif;
+}
+
+#startTokenCalc:hover {
+    background-color: #45a049;
+}
+
+#calculatorContainer {
+    border-radius: 5px;
+    background-color: white;
+    padding: 20px;
+    width: 350px;
+    font-family: Raleway,sans-serif;;
+    margin-left: 30%;
+} 
+
+.ToolTitle {
+  float:left; 
+  margin-top:20px;
+}
+
+#icos, #currencies, #rounds {
+  cursor: pointer;
+}
