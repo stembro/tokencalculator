@@ -1,0 +1,31 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="index.css">
+  </head>
+  <body bgcolor = "black">
+    <div id="mainContainer">
+      <div id="calculatorContainer">
+           <b class="ToolTitle">ICO Tokens Calculator</b>
+           <img src="https://media.licdn.com/mpr/mpr/shrink_200_200/AAIA_wDGAAAAAQAAAAAAAA1-AAAAJGRlOGYzMGIyLWNmMjEtNDcyYS1iNjgwLWFjOTk1NTg0Y2MxZQ.png" alt="CSGO Howl" style="float:right; margin-top:0px; height:60; width:60;" >
+
+          <select id="icos">
+            <option>Loading...</option>
+          </select>
+
+          <select id="currencies">
+            <option>Select Currency</option>
+          </select>
+
+          <select id="rounds">
+            <option>Select Tokensale Round</option>
+          </select>
+
+          <input type="number" id="investmentAmount" placeholder="Enter Investment Amount" step='0.01' min="0">
+
+          <button id="startTokenCalc">Calculate My Tokens</button>
+
+          <input type="text" id="tokensresult" placeholder=" 0 Tokens" readonly>  
+      </div>
+    </div>
+  </body>
+</html>
