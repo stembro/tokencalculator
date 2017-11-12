@@ -3,6 +3,7 @@ $(document).ready(() => {
     const api = context.api
     const ui = context.ui
     let icoData = []
+    let fiatData = []
 
     /*Function that will create all of the dropdowns on the UI*/
     function populateStaticLists() {
@@ -71,28 +72,33 @@ $(document).ready(() => {
     }
     
     function refreshICOData() {
-      return loadICOData()
+      return loadFiatRates()
+        .then(loadICOData)
         .then(data => {
           icoData = data
           populateICOList(data.map(ico => ico.companyname))
         })
     }
-    
-    /*Function that converts amount in specified currency to USD*/
-    function convertFiatToEther(fiatAmount, currency) {
+
+    function loadFiatRates() {
       return fetch(api.currencyExchange)
         .then(resp => resp.json())
         .then(data => {
-          const exchangerate = currency === "USD" ? 1 : data.rates[currency];
-          const usdamount = fiatAmount / exchangerate;
-        
-          //Convert amount to Ether
-          return fetch(api.ethereumCoinmarketCap)
-            .then(resp => resp.json())
-            .then(data => {
-              return (usdamount / data[0].price_usd)
-          })
-      })
+          fiatData = data
+        })
+    }
+    
+    /*Function that converts amount in specified currency to USD*/
+    function convertFiatToEther(fiatAmount, currency) {
+        const exchangerate = currency === "USD" ? 1 : fiatData.rates[currency];
+        const usdamount = fiatAmount / exchangerate;
+      
+        //Convert amount to Ether
+        return fetch(api.ethereumCoinmarketCap)
+          .then(resp => resp.json())
+          .then(data => {
+            return (usdamount / data[0].price_usd)
+        })
     }
     
     // Function that converts ether to amount of tokens
