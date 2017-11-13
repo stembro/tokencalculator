@@ -78,3 +78,17 @@ input[type=number]::-webkit-outer-spin-button {
 #icos, #currencies, #rounds {
   cursor: pointer;
 }
+
+@media only screen and (max-width: 360px) {
+ #calculatorContainer {
+     width: 90%;
+     margin-left: 0;
+ }
+}
+
+@media only screen and (max-width : 800px) {
+ #calculatorContainer {
+     width: 75%;
+     margin: 0 auto;
+ }
+}
